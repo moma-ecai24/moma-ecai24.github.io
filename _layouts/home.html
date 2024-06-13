@@ -1,0 +1,115 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <div class="">
+    <div class="footer-col-wrapper in-parent align-top">
+      <div class="home-desc about-col about-col-2">
+        <p class="home-desc">
+          I am a PhD student at the
+          <a class="reference-url" href="https://research.engr.oregonstate.edu/aadi/home">Autonomous Agents and Distributed
+            Intelligence Lab</a>, part of the
+          <a class="reference-url" href="https://engineering.oregonstate.edu/CoRIS">Collaborative Robotics and
+            Intelligent Systems (CoRIS) Institute</a>
+          at Oregon State University, where I work on learning and coordination in multi-robot systems.
+          I am advised by
+          <a class="reference-url" href="https://web.engr.oregonstate.edu/~ktumer/">Dr. Kagan Tumer</a>.
+
+
+        </p>
+        <p>
+          My research is at the intersection of reinforcement learning, evolutionary robotics and game theory. I am
+          interested in developing methods that enable asymmetric robots (robots with diverse capabilities and
+          objectives) to cooperate and work together as teams with a variety of partners.
+
+          Discovering the relationships between robots and their influence on the team dynamics is crucial for learning
+          adaptable behaviors that can generalize across a variety of tasks and team compositions.
+          For cultivating such relationships, my work investigates Quality-Diversity and Coevolutionary reinforcement
+          learning algorithms which encourage novel behaviors and teamwork as a key component of the learning process.
+
+          <!--
+            My research is at the intersection of reinforcement learning, evolutionary robotics and game theory. I am interested in developing methods that enable asymmetric robots (robots with diverse capabilities and objectives) to cooperate and work together as teams with a variety of partners.
+            
+            Discovering the relationships between the robots in a team and their influence on the overall team task is crucial for learning adaptable behaviors that can generalize across a variety of tasks and team compositions.
+            For learning such relationships, my work investigates Quality-Diversity and Coevolutionary reinforcement learning algorithms which encourage novel behaviors and teamwork as a key component of learning.
+          -->
+
+          <!--
+            Discovering generalizable inter-robot synergies is instrumental in learning adaptable behaviors that can generalize across changes in team composition and tasks. To discovery and cultivate rich inter-robot relationships, I leverage ideas from Quality-Diversity algorithms, latent behavior spaces and coevolutionary reinforcement learning.
+
+          latent spaces, Quality Diversity and 
+            A key insight 
+            investigating the rich evolving tapestry of agent synergies in response to the changes in other agents' utilities, the tasks and the teams in which they operate.
+
+            The multi-objective fitness $\Phi_t$ captures a rich constellation of dependencies and trade-offs
+
+            To learn and maintain these synergies, agents must learn to balance their utilities with the team objectives, and more subtly with the utilities of other agent classes
+
+            Our method equips agents to find such valuable inter-agent synergies for robust teaming
+            -->
+        </p>
+      </div>
+      <div class="about-col about-col-1">
+        <img width="90%" style="padding-top: 15%" src="/assets/images/profile_transparent.png">
+      </div>
+    </div>
+  </div>
+
+  <br /><br />
+  <header class="about-header">
+  </header>
+
+  {{ content }}
+
+  <p class="home-title">
+    selected publications
+  </p>
+  <br />
+
+  <ul class="paper-list">
+    {% assign papers = site.papers | reverse %}
+    {% for paper in papers %}
+    <li>
+      <!--<a class="paper-link" href="{{ paper.url | relative_url }}">{{ paper.title | escape }}</a>-->
+      <span class="paper-title">{{ paper.title | escape }}</span>
+      <br />
+      <span class="paper-venue">{{ paper.venue | escape }}</span>
+      <span class="paper-venue-short">{{ paper.venue_short | escape }}</span>
+      <br />
+      <span class="paper-authors">{{ paper.authors | escape }}</span>
+      <a class="paper-pdf-url" href="{{ paper.pub_url | relative_url }}">[ pdf ]</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <br /><br />
+
+
+  <!---
+  <p class="home-title">
+    experience
+  </p>
+  <br/>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span> 
+        {% if post.last_edited %}
+          <span class="post-meta"> - edited {{post.last_edited | date: date_format}}</span>
+        {% endif %}
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <span class="post-meta">{{ post.excerpt | escape }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+  -->
+
+  <!--
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  //-->
+
+</div>

@@ -16,7 +16,7 @@
 title: Multi-Objective Multi-Agent Learning - Evolutionary and Reinforcement Learning Perspectives
 email: dixitg@oregonstate.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Website for ECAI 2024 tutorial Multi-Objective Multi-Agent Learning - Evolutionary and Reinforcement Learning Perspectives.
+#  Website for ECAI 2024 tutorial Multi-Objective Multi-Agent Learning - Evolutionary and Reinforcement Learning Perspectives.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb

@@ -1,20 +1,112 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ site.lang | default: " en-US" }}">
 
-  {% include head.html %}
+<head>
+    <meta charset="UTF-8">
 
-  <body>
+    {% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style"
+        type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1E5AC8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+</head>
 
-    {% include header.html %}
+<body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+    <header class="page-header" role="banner">
+        <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+        <h2 class="project-tagline">{{ page.description | default: site.description | default:
+            site.github.project_tagline }}</h2>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+        <div style="text-wrap: pretty;">
+            <p>
+                Handling multiple objectives and multiple agents is an important and ubiquitous characteristic of many,
+                if not most, real-world decision problems. Mathematically, this translates to agents receiving a reward
+                vector, rather than a scalar reward. This seemingly minor change fundamentally transforms the problem,
+                shaping both the optimization criteria and the solution concepts. For example, the well-known
+                game-theory result that every (single-objective) normal form game has a Nash equilibrium, no longer
+                holds when the agents care about more than one objective.
+            </p>
+            <p>
+                In this tutorial, we will start with what it means to care about more than one aspect of the solution
+                and why it is pertinent for modelling multi-agent settings. We will examine what agents should optimise
+                for in multi-objective settings and discuss different assumptions, culminating in a taxonomy of
+                multi-objective multi-agent settings and the accompanying solution concepts. We will then follow up with
+                existing results and algorithmic approaches from evolutionary and multi-agent multi-objective
+                reinforcement learning.
+            </p>
+            <!--   <div class="bs-callout">
+                This tutorial is an exposition of foundational ideas, challenges, and seminal work in multi-objective
+                multi-agent decision-making.
+            </div>
+            -->
+        </div>
+
+
+        <h1>Speakers</h1>
+
+        <div class="container">
+            <div class="image-container">
+                <source srcset="/assets/images/bios_compressed/gaurav.webp" type="image/webp">
+                <source srcset="/assets/images/bios_compressed/gaurav.jpg" type="image/jpeg">
+                <img src="/assets/images/bios_compressed/gaurav.jpg" loading="lazy" height="200" width="200"
+                    alt="Picture of gaurav">
+            </div>
+            <div class="details-container">
+                <h2><a href="https://gdixit.com/">Gaurav Dixit</a></h2>
+                Gaurav is a postdoctoral scholar at the Autonomous Agents and Distributed Intelligence Lab, at Oregon
+                State University. He earned his Ph.D. from Oregon State University in 2023. His work with the AI-CARING
+                Institute aims to facilitate collective decision-making required to pursue high-level, long-term,
+                dynamic, and possibly ill-defined objectives emerging from changing user preferences.
+            </div>
+        </div>
+
+        </br>
+        <div class="container">
+            <picture class="image-container">
+                <source srcset="/assets/images/bios_compressed/roxana.webp" type="image/webp">
+                <source srcset="/assets/images/bios_compressed/roxana.jpg" type="image/jpeg">
+                <img src="/assets/images/bios_compressed/roxana.jpg" loading="lazy" height="200" width="200"
+                    alt="Picture of Roxana">
+            </picture>
+            <div class="details-container">
+                <h2><a href="https://roxanaradulescu.com/">Roxana Rădulescu</a></h2>
+                Roxana is an assistant professor at the Intelligent Systems group, Utrecht University. She obtained her
+                PhD degree at the Vrije Universiteit Brussel in September 2021. Her research is focussed on the
+                development of multi-agent decision making systems where each agent is driven by different objectives
+                and goals, under the paradigm of multi-objective multi-agent reinforcement learning.
+            </div>
+        </div>
+
+        </br>
+        <div class="container">
+            <picture class="image-container">
+                <source srcset="/assets/images/bios_compressed/patrick.webp" type="image/webp">
+                <source srcset="/assets/images/bios_compressed/patrick.jpg" type="image/jpeg">
+                <img src="/assets/images/bios_compressed/patrick.jpg" loading="lazy" height="200" width="200"
+                    alt="Picture of Patrick">
+            </picture>
+            <div class="details-container">
+                <h2><a href="https://www.universityofgalway.ie/our-research/people/computer-science/patrickmannion">Patrick Mannion</a></h2>
+                Patrick is a Lecturer Above the Bar / Assistant Professor in the School of Computer Science at
+                University of Galway. He is also Programme Director of the PgCert in AI for Professionals at University
+                of Galway. He is Deputy Editor of The Knowledge Engineering Review, and an Editorial Board Member for
+                Neural Computing & Applications. He holds a BEng, a HDip and a PhD from University of Galway. His main
+                research interests are in multi-objective decision making, multi-agent systems and reinforcement
+                learning.
+            </div>
+        </div>
+
         {{ content }}
-      </div>
+
     </main>
-
-    {% include footer.html %}
-
-  </body>
+</body>
 
 </html>
